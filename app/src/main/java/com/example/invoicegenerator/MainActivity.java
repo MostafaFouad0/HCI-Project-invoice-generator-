@@ -34,25 +34,29 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<Data> data = new ArrayList<>();
 
     public void add_product_btn(View view) {
-        EditText product_Obj = findViewById(R.id.productName);
-        String product_Name = product_Obj.getText().toString();
+        try {
+            EditText product_Obj = findViewById(R.id.productName);
+            String product_Name = product_Obj.getText().toString();
 
-        EditText price_Obj = findViewById(R.id.price);
-        int price = Integer.parseInt(price_Obj.getText().toString());
+            EditText price_Obj = findViewById(R.id.price);
+            int price = Integer.parseInt(price_Obj.getText().toString());
 
-        EditText quantity_Obj = findViewById(R.id.quantity);
-        int quantity = Integer.parseInt(quantity_Obj.getText().toString());
+            EditText quantity_Obj = findViewById(R.id.quantity);
+            int quantity = Integer.parseInt(quantity_Obj.getText().toString());
 
-        EditText discount_Obj = findViewById(R.id.discount);
-        int discount = Integer.parseInt(discount_Obj.getText().toString());
+            EditText discount_Obj = findViewById(R.id.discount);
+            int discount = Integer.parseInt(discount_Obj.getText().toString());
 
-        data.add(new Data(quantity, discount, price, product_Name));
+            data.add(new Data(quantity, discount, price, product_Name));
 
-        Toast.makeText(this, "Product Added!", Toast.LENGTH_SHORT).show();
-        product_Obj.setText("");
-        price_Obj.setText("");
-        quantity_Obj.setText("");
-        discount_Obj.setText("");
+            Toast.makeText(this, "Product Added!", Toast.LENGTH_SHORT).show();
+            product_Obj.setText("");
+            price_Obj.setText("");
+            quantity_Obj.setText("");
+            discount_Obj.setText("");
+        }catch (Exception e){
+            Toast.makeText(this, "Please fill all the fields !", Toast.LENGTH_SHORT).show();
+        }
     }
 
     public void checkout_btn(View view) {

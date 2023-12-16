@@ -12,12 +12,16 @@ import android.widget.TextView;
 public class MainActivity2 extends AppCompatActivity {
 
 
-    public static String getTotal(String discount, String price) {
+    public static String getTotal(String discount, String price, String quantity) {
+        // function to get the total amount of money to be paid for a single product
         String ret;
         int disc = Integer.parseInt(discount);
         int pri = Integer.parseInt(price);
-        double total = (pri - (pri * (disc / 100.0)));
+        int quan = Integer.parseInt(quantity);
+
+        double total = Math.max((pri - (pri * (disc / 100.0))), 0) * quan;
         ret = String.valueOf(total);
+
         return ret;
     }
 
@@ -34,13 +38,14 @@ public class MainActivity2 extends AppCompatActivity {
             String key = "Obj" + i;
             String data = b.getString(key);
             String cur[] = data.split("\\|");
-            String tot = getTotal(cur[3], cur[1]);
+            String tot = getTotal(cur[3], cur[1], cur[2]);
             all += Double.parseDouble(tot);
-            to_be_printed = "Name \t\t\t\t\t\t " + cur[0] + "\n" + "Price \t\t\t\t\t\t\t$ " + cur[1] + "\n" + "quantity \t\t\t\t " + cur[2] + "\n" + "discount \t\t\t\t " + cur[3] + "%" + "\n" + "\t\t\t\t\tTotal \t\t\t\t\t\t\t$ " + tot + "\n\n";
+
+            to_be_printed = "Name \t\t\t\t\t\t " + cur[0] + "\n" + "Price \t\t\t\t\t\t\t$ " + cur[1] + "\n" + "quantity \t\t\t\t " + cur[2] + "\n" + "discount \t\t\t " + cur[3] + "%" + "\n" + "\t\t\t\t\tTotal \t\t\t\t\t\t\t$ " + tot + "\n\n";
             text_pane.append(to_be_printed);
-            text_pane.setTextSize(16);
-            text_pane.setTypeface(text_pane.getTypeface(), Typeface.NORMAL);
         }
+        text_pane.setTextSize(20);
+        text_pane.append("Total to be paid is " + "$ " + all);
     }
 
     public void back_btn(View view) {

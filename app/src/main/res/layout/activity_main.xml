@@ -4,26 +4,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#EDEDED"
+    android:padding="4px"
     tools:context=".MainActivity">
 
     <LinearLayout
-        android:layout_width="409dp"
-        android:layout_height="729dp"
+        android:id="@+id/linearLayout"
+        android:layout_width="332dp"
+        android:layout_height="566dp"
         android:orientation="vertical"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="1dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.75">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="79dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:padding="25px">
 
             <TextView
                 android:id="@+id/textView4"
-                android:layout_width="56dp"
+                android:layout_width="138dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Product Name" />
+                android:text="Product Name"
+                android:textColor="#171717"
+                android:textSize="20sp" />
 
             <EditText
                 android:id="@+id/productName"
@@ -32,20 +42,24 @@
                 android:layout_weight="1"
                 android:ems="10"
                 android:hint="e.g. KitKat"
-                android:inputType="text" />
+                android:inputType="text"
+                android:textColor="#171717" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="78dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:padding="25px">
 
             <TextView
                 android:id="@+id/textView8"
-                android:layout_width="48dp"
+                android:layout_width="139dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Price" />
+                android:text="Price"
+                android:textColor="#171717"
+                android:textSize="20sp" />
 
             <EditText
                 android:id="@+id/price"
@@ -54,20 +68,24 @@
                 android:layout_weight="1"
                 android:ems="10"
                 android:hint="10"
-                android:inputType="number" />
+                android:inputType="number"
+                android:textColor="#171717" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="85dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:padding="25px">
 
             <TextView
                 android:id="@+id/textView5"
-                android:layout_width="wrap_content"
+                android:layout_width="140dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Quantity " />
+                android:text="Quantity "
+                android:textColor="#171717"
+                android:textSize="20sp" />
 
             <EditText
                 android:id="@+id/quantity"
@@ -76,20 +94,24 @@
                 android:layout_weight="1"
                 android:ems="10"
                 android:hint="20"
-                android:inputType="number" />
+                android:inputType="number"
+                android:textColor="#171717" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="86dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:padding="25px">
 
             <TextView
                 android:id="@+id/textView6"
-                android:layout_width="wrap_content"
+                android:layout_width="138dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Discount" />
+                android:text="Discount"
+                android:textColor="#171717"
+                android:textSize="20sp" />
 
             <EditText
                 android:id="@+id/discount"
@@ -98,32 +120,51 @@
                 android:layout_weight="1"
                 android:ems="10"
                 android:hint="25"
-                android:inputType="number" />
+                android:inputType="number"
+                android:textColor="#171717" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="113dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:padding="25px">
 
             <Button
                 android:id="@+id/add"
                 android:layout_width="78dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Add product"
+                android:backgroundTint="#DA0037"
                 android:onClick="add_product_btn"
-                />
+                android:text="Add product" />
 
             <Button
                 android:id="@+id/checkout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:backgroundTint="#DA0037"
+                android:onClick="checkout_btn"
                 android:padding="20px"
-                android:text="Checkout"
-                android:onClick="checkout_btn"/>
+                android:text="Checkout" />
         </LinearLayout>
 
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="276dp"
+        android:layout_height="72dp"
+        android:fontFamily="sans-serif-black"
+        android:padding="10px"
+        android:text="Invoice Generator"
+        android:textColor="#171717"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.042" />
 </androidx.constraintlayout.widget.ConstraintLayout>
